@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      margin: 40px;
+    }
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .form-row label {
+      width: 120px;
+      margin-right: 10px;
+      text-align: right; /* Right-aligns label text */
+    }
+    .form-row input,
+    .form-row select {
+      flex: 1;
+      max-width: 300px;
+    }
+    .radio-group {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    button {
+      margin-left: 130px; /* aligns button with inputs */
+    }
+  </style>
+</head>
+<body>
+
+  <h4 class="text-secondary mb-4">Registration</h4>
+
+  <form method="POST" action="{{ url_for('result') }}">
+    <div class="form-row">
+      <label for="lastname" class="form-label">Lastname</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" required>
+    </div>
+
+    <div class="form-row">
+      <label for="firstname" class="form-label">Firstname</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" required>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label">Sex</label>
+      <div class="radio-group">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" value="Male" required>
+          <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="sex" value="Female" required>
+          <label class="form-check-label">Female</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="institution" class="form-label">Institution</label>
+      <select class="form-select" id="institution" name="institution" required>
+        <option value="PSU">PSU</option>
+        <option value="UCU">UCU</option>
+        <option value="PU">PU</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Register</button>
+  </form>
+
+</body>
+</html>
